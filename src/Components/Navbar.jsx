@@ -1,3 +1,4 @@
+import CartWidget from './CartWidget'
 import logo from './images/logo.png'
 
 const Navbar = () => {
@@ -7,7 +8,7 @@ const Navbar = () => {
                 <div className="col">
                     <nav className="navbar navbar-expand-lg bg-body-tertiary">
                         <div className="container-fluid bg-dark text-center">
-                            <a className="navbar-brand" href={"/"}><img src={logo} width={'48px'}/></a>
+                            <a className="navbar-brand" href={"/"}><img src={logo} width={'48px'} alt= {'logo'}/></a>
                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                             </button>
@@ -17,7 +18,7 @@ const Navbar = () => {
                                     <a className="nav-link text-light" aria-current="page" href={"/"}>Home</a>
                                     </li>
                                     <li className="nav-item">
-                                    <a className="nav-link text-light" href={"/"}>Link</a>
+                                    <a className="nav-link text-light" href={"/"}>Novedades</a>
                                     </li>
                                     <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle text-light" href={"/"} role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -31,13 +32,18 @@ const Navbar = () => {
                                     </ul>
                                     </li>
                                     <li className="nav-item">
-                                    <a className="nav-link text-light">Disabled</a>
+                                    <a className="nav-link text-light" href='/'>Contacto</a>
                                     </li>
                                 </ul>
+                                <div className='col d-flex align-items-center justify-content-end'>
                                 <form className="d-flex" role="search">
-                                <input className="form-control me-2" type="search" placeholder="Buscar" aria-label="Search"/>
+                                <input className="form-control me-2" type="search" placeholder="Juegos" aria-label="Search"/>
                                 <button className="btn btn-outline-success text-primary" type="submit">Buscar</button>
                                 </form>
+                                </div>
+                                <div className="col d-flex align-items-center justify-content-end">
+                                    <CartWidget />
+                                </div>
                             </div>
                         </div>
                     </nav>
