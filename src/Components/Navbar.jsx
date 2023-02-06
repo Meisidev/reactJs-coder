@@ -25,7 +25,7 @@ const Navbar = () => {
                                         Juegos
                                     </a>
                                     <ul className="dropdown-menu bg-dark">
-                                        <li><a className="dropdown-item text-light" href={"/"}>Accion</a></li>
+                                        <li><a className="dropdown-item text-light" href={"/"}>Estrategia</a></li>
                                         <li><a className="dropdown-item text-light" href={"/"}>Terror</a></li>
                                         <li><a className="dropdown-item text-light" href={"/"}>Aventura </a></li>
                                         <li><a className="dropdown-item text-light" href={"/"}>Disparos</a></li>
@@ -52,4 +52,4 @@ const Navbar = () => {
         </div>
     )
 }
-export default Navbar
+export default Navbar;

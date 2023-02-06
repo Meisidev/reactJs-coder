@@ -57,4 +57,4 @@ const MainPart= () => {
     )
 }
 
-export default MainPart
+export default MainPart;
