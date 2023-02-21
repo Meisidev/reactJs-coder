@@ -21,12 +21,12 @@ const Footer=()=> {
             <hr />
             <div className="row">
                 <div className="col">
-                    <div class="card bg-dark text-center">
-                        <h5 class="card-header text-white">Soporte</h5>
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Contanos tu problema</h5>
-                            <p class="card-text text-white">Detallanos puntualmente el inconveniente que estas teniendo por mail</p>
-                            <a href="./" class="btn btn-primary text-white">Enviar</a>
+                    <div className="card bg-dark text-center">
+                        <h5 className="card-header text-white">Soporte</h5>
+                        <div className="card-body">
+                            <h5 className="card-title text-white">Contanos tu problema</h5>
+                            <p className="card-text text-white">Detallanos puntualmente el inconveniente que estas teniendo por mail</p>
+                            <a href="./" className="btn btn-primary text-white">Enviar</a>
                         </div>
                     </div>
                 </div>

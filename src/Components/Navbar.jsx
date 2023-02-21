@@ -25,10 +25,9 @@ const Navbar = () => {
                                         Juegos
                                     </a>
                                     <ul className="dropdown-menu bg-dark">
-                                        <li><a className="dropdown-item text-light" href={"/"}>Estrategia</a></li>
-                                        <li><a className="dropdown-item text-light" href={"/"}>Terror</a></li>
-                                        <li><a className="dropdown-item text-light" href={"/"}>Aventura </a></li>
-                                        <li><a className="dropdown-item text-light" href={"/"}>Disparos</a></li>
+                                        <li><a className="dropdown-item text-light" href={"/"}>RPG</a></li>
+                                        <li><a className="dropdown-item text-light" href={"/"}>Shooter</a></li>
+                                        <li><a className="dropdown-item text-light" href={"/"}>Battle Royale </a></li>
                                     </ul>
                                     </li>
                                     <li className="nav-item">
