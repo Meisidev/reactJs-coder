@@ -4,7 +4,7 @@ const ItemList = ({items}) => {
     return (
         <div className="row">
             {items.map(item => (
-                <div className="col-md-3 d-flex align-items-stretch" key={item.id}>
+                <div className="col-md-3 d-flex" key={item.id}>
                     <Item item={item} />
                 </div>
             ))}

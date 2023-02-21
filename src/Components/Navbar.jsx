@@ -1,4 +1,5 @@
 import CartWidget from './CartWidget'
+import { Link, NavLink } from 'react-router-dom'
 import logo from './images/logo.png'
 
 const Navbar = () => {
@@ -8,7 +9,7 @@ const Navbar = () => {
                 <div className="col">
                     <nav className="navbar navbar-expand-lg bg-body-tertiary">
                         <div className="container-fluid bg-dark text-center">
-                            <a className="navbar-brand" href={"/"}><img src={logo} width={'48px'} alt= {'logo'}/></a>
+                            <Link className="navbar-brand" to={"/"}><img src={logo} width={'48px'} alt= {'logo'}/></Link>
                             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                             </button>
@@ -25,9 +26,9 @@ const Navbar = () => {
                                         Juegos
                                     </a>
                                     <ul className="dropdown-menu bg-dark">
-                                        <li><a className="dropdown-item text-light" href={"/"}>RPG</a></li>
-                                        <li><a className="dropdown-item text-light" href={"/"}>Shooter</a></li>
-                                        <li><a className="dropdown-item text-light" href={"/"}>Battle Royale </a></li>
+                                        <li><NavLink className="dropdown-item text-light" activeClassName={'active'} to={"/category/rpg"}>RPG</NavLink></li>
+                                        <li><NavLink className="dropdown-item text-light" activeClassName={'active'} to={"/category/shooter"}>Shooter</NavLink></li>
+                                        <li><NavLink className="dropdown-item text-light" activeClassName={'active'} to={"/category/battleroyale"}>Battle Royale </NavLink></li>
                                     </ul>
                                     </li>
                                     <li className="nav-item">

@@ -6,7 +6,7 @@ import hp from './images/games/hp.jpg'
 
 const MainPart= () => {
     return (
-        <div className= "container mb-5">
+        <div className= "container my-5">
             <div id="carouselExampleCaptions" className="carousel slide">
                 <div className="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
