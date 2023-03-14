@@ -26,9 +26,9 @@ const Navbar = () => {
                                         Juegos
                                     </a>
                                     <ul className="dropdown-menu bg-dark">
-                                        <li><NavLink className="dropdown-item text-light" activeClassName={'active'} to={"/category/rpg"}>RPG</NavLink></li>
-                                        <li><NavLink className="dropdown-item text-light" activeClassName={'active'} to={"/category/shooter"}>Shooter</NavLink></li>
-                                        <li><NavLink className="dropdown-item text-light" activeClassName={'active'} to={"/category/battleroyale"}>Battle Royale </NavLink></li>
+                                        <li><NavLink className="dropdown-item text-light" activeclassname={'active'} to={"/category/rpg"}>RPG</NavLink></li>
+                                        <li><NavLink className="dropdown-item text-light" activeclassname={'active'} to={"/category/shooter"}>Shooter</NavLink></li>
+                                        <li><NavLink className="dropdown-item text-light" activeclassname={'active'} to={"/category/battleroyale"}>Battle Royale </NavLink></li>
                                     </ul>
                                     </li>
                                     <li className="nav-item">
