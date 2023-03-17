@@ -1,24 +1,27 @@
+import { doc, getDoc, getFirestore } from "firebase/firestore"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemDetail from "./ItemDetail"
-import arrayJuegos from "./json/juegos.json"
+import Loading from "./Loading"
 
 const ItemDetailContainer = () => {
     const [item,setItem] = useState({})
+    const [loading, setLoading] = useState(true)
     const {id} = useParams()
 
+
     useEffect (() => {
-        const promise = new Promise((resolve)=> {
-            setTimeout (()=>{
-                resolve(arrayJuegos.find(juegos => juegos.id === parseInt(id)))
-            },2000)
-        })
-        promise.then ((respuesta)=>{
-            setItem(respuesta)
+        const db = getFirestore()
+        const document = doc(db, 'items', id)
+        getDoc(document, id).then(element =>{
+            console.log(element)
+            setItem({id:element.id, ...element.data()})
+            setLoading(false)
         })
     }, [id])
+
     return (
-        <ItemDetail item={item}/>
+        loading ? <Loading /> : <ItemDetail item={item}/> 
     )
 }
 

@@ -1,38 +1,29 @@
-//import { getDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-//import { db } from "../Firebase";
+import { getFirestore, collection, getDocs, query, where } from "firebase/firestore";
 import ItemList from "./ItemList";
-import arrayJuegos from './json/juegos.json';
+import Loading from "./Loading";
 
 const ItemListContainer = () => {
 
     const [items, setItems] = useState([])
+    const [loading, setLoading] = useState([true])
     const {id} = useParams()
 
     useEffect (() => {
-        const promise = new Promise ((resolve) => {
-            setTimeout (()=>{
-                resolve(id ? arrayJuegos.filter(item => item.genre === id) : arrayJuegos)
-            }, 2000)
+        const db = getFirestore()
+        const itemsCollection = collection(db,'items')
+        const filter = id ? query(itemsCollection, where('genre', '==', id)) : itemsCollection
+        getDocs(filter).then(elements =>{
+            setItems(elements.docs.map(element =>({id:element.id, ...element.data()})))
+            setLoading(false)
         })
-        promise.then((respuesta) => {
-            setItems(respuesta)
-        })
-    },[id]) 
-
-    //firebase
-/*     useEffect (() => {
-        const ref= doc(db, 'Productos', 'JktQejmiuQ52ZrSgBYn8')
-        getDoc(ref).then((snapshot)=>{if(snapshot.exists()){
-            setItems([{id:snapshot.id,...snapshot.data()}])
-        }})
-        .catch((err)=> console.log(err.msg))
-    },[]) */
+    },[id])
 
     return (
         <div className="container text-center my-3 alert alert-dark bg-dark text-primary"> 
-            <ItemList items={items}/>
+        {loading ? <Loading /> : <ItemList items={items}/> }
+            
         </div>
     )
 }

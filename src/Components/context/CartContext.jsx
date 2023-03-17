@@ -7,8 +7,8 @@ const CartContextProvider = ({children}) => {
     const [cart, setCart] = useState([])
 
     const addItem = (juego,quantity) => {
-        if (isInCart(juego.id)) {
-            let pos = cart.findId (x => x.id === juego.id)
+        if (isInCart(juego.index)) {
+            let pos = cart.findIndex (x => x.index === juego.index)
             cart[pos].quantity += quantity
             setCart([...cart])
         } else {
@@ -18,7 +18,7 @@ const CartContextProvider = ({children}) => {
     }
 
     const removeItem = (itemId) => {
-        const items = cart.filter(juego => juego.id !== itemId)
+        const items = cart.filter(juego => juego.index !== itemId)
         setCart ([...items])
     }
 
@@ -27,7 +27,7 @@ const CartContextProvider = ({children}) => {
     }
     
     const isInCart = (itemId) => {
-        return cart.some(juego => juego.id === itemId) 
+        return cart.some(juego => juego.index === itemId) 
     }
 
     const cartTotal = () => {

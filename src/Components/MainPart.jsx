@@ -3,7 +3,6 @@ import csgo from './images/games/csgo.jpg'
 import ds from './images/games/deadspace.jpg'
 import hp from './images/games/hp.jpg'
 
-
 const MainPart= () => {
     return (
         <div className= "container my-5">
